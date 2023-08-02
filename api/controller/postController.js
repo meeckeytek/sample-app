@@ -32,7 +32,7 @@ exports.newPost = async (req, res) => {
       .json({ message: "Kindly fill all the required fields" });
   }
   const post = new Post({
-    image,
+    image: req.file.filename,
     title,
     type,
     content,

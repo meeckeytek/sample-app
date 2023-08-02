@@ -6,6 +6,6 @@ route.get("/", postController.getPosts);
 
 route.get("/:postId", postController.getPostDetails);
 
-route.post("/", postController.newPost);
+route.post("/", upload.single("image"), postController.newPost);
 
 module.exports = route;
