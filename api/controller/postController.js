@@ -25,8 +25,8 @@ exports.getPostDetails = async (req, res) => {
 };
 
 exports.newPost = async (req, res) => {
-  const { image, title, type, content, profileImg, userName } = req.body;
-  if (!image || !title || !type || !content || !profileImg || !userName) {
+  const { image, title, category, content, username } = req.body;
+  if (!title || !category || !content || !username) {
     return res
       .status(429)
       .json({ message: "Kindly fill all the required fields" });
@@ -34,10 +34,9 @@ exports.newPost = async (req, res) => {
   const post = new Post({
     image: req.file.filename,
     title,
-    type,
+    category,
     content,
-    profileImg,
-    userName,
+    username
   });
 
   try {

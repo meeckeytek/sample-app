@@ -18,7 +18,7 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
 // app.use(cors());
 
-app.use("/uploads", express.static(path.join("uploads")));
+app.use("/", express.static(path.join("uploads")));
 
 // //Making sure all requested are accessed and header are set
 app.use((req, res, next) => {
