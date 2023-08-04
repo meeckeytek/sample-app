@@ -7,7 +7,7 @@ import PostCard from "../component/PostCard";
 
 export default function Home() {
   const [posts, setPosts] = useState();
-  const [isLoading, setIsLoading] = useState(false)
+  // const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     api

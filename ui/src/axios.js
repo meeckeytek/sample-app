@@ -14,7 +14,7 @@ export default api;
 
 // //New Post
 // export const newUser = (values) =>
-//   api.post("/", values).then((res) => res.data);
+//  
 
 // //Post details
 // export const deleteUser = (postId) =>

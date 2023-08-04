@@ -13,19 +13,17 @@ exports.getPostDetails = async (req, res) => {
   try {
     post = await Post.findById(req.params.postId);
   } catch (error) {
-    console.log(error);
-    return res.status(500).json({ message: "Internal service error" });
+    res.status(500).json({ message: "Internal service error" });
   }
 
   if (!post) {
     return res.status(404).json({ message: "Invalid post Id" });
   }
-
   res.status(200).json(post);
 };
 
 exports.newPost = async (req, res) => {
-  const { image, title, category, content, username } = req.body;
+  const { title, category, content, username } = req.body;
   if (!title || !category || !content || !username) {
     return res
       .status(429)
@@ -36,7 +34,7 @@ exports.newPost = async (req, res) => {
     title,
     category,
     content,
-    username
+    username,
   });
 
   try {
