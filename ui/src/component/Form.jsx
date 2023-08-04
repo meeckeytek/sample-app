@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../axios";
 
 import "./css/form.css";
@@ -11,6 +12,7 @@ const defaultValues = {
   category: "",
 };
 export default function Form() {
+    const navigate = useNavigate();
   const [values, setValues] = useState(defaultValues);
   const [image, setImage] = useState();
   const [errorMsg, setErrorMsg] = useState("");
@@ -39,6 +41,7 @@ export default function Form() {
       formData.append("content", values.content);
       formData.append("category", values.category);
       api.post("/", formData).then((res) => console.log(res));
+      navigate("/")
     }
   };
   return (
