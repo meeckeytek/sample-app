@@ -1,0 +1,17 @@
+version: "3"
+services:
+  api:
+    build: ./api
+    ports: 
+      - 8000:8000
+  ui:
+    build: ./ui
+    ports: 
+      - 3000:3000
+    stdin_open: true
+    tty: true
+    depends_on:
+      - api
+    environment:
+      MONGODB_URI: mongodb+srv://kube-post:pW46yOXdYRSU0RVd@cluster0.6lrvr.mongodb.net/?retryWrites=true&w=majority
+    
