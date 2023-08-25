@@ -13,5 +13,5 @@ services:
     depends_on:
       - api
     environment:
-      MONGODB_URI: mongodb+srv://kube-post:pW46yOXdYRSU0RVd@cluster0.6lrvr.mongodb.net/?retryWrites=true&w=majority
+      MONGODB_URI: 
     
